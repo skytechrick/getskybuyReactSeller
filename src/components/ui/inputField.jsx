@@ -1,6 +1,6 @@
 
 
-export function InputField({ id, placeholder, type = "text" , setValue, value }) {
+export function InputField({ id, placeholder, type = "text" , setValue, value , required = false , autoFocus = false }) {
     return (
         <div className="relative my-[8px] w-full">
             <input
@@ -19,7 +19,12 @@ export function InputField({ id, placeholder, type = "text" , setValue, value })
                 onChange={(e) => setValue(e.target.value)}
                 placeholder=" "
                 className="peer text-sm outline-none border w-full px-4 py-3 rounded-md transition-shadow duration-200 focus:shadow focus:shadow-[var(--primaryColor)]"
-                required
+                required={required}
+                autoComplete="off"
+                autoCapitalize="none"
+                autoCorrect="off"
+                spellCheck="false"
+                autoFocus={autoFocus}
             />
             <label
                 htmlFor={id}

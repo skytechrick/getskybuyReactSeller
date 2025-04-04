@@ -1,4 +1,5 @@
 import { InputField } from "./ui/inputField.jsx";
+import { Button } from "./ui/button.jsx";
 import { useState } from "react";
 
 export default function LoginPage() {
@@ -17,18 +18,26 @@ export default function LoginPage() {
                 <div className="w-3/5 bg-white p-10">
                     <h2 className="font-bold text-2xl">Login</h2>
                     <p>Enter your credentials!</p>
-                    <InputField setValue={setEmail} value={email} id="loginSellerEmail" placeholder="Email"/>
-                    <InputField setValue={setPassword} value={password} id="loginSellerPassword" type={showPassword? "text": "password"} placeholder="Password"/>
-                    <div className="my-[2px]">
-                        <input
-                            id="showPassword"
-                            type="checkbox"
-                            className="w-4 mr-1 cursor-pointer"
-                            onChange={(e) => setShowPassword(e.target.checked)}
-                            checked={showPassword}
-                        />
-                        <label htmlFor="showPassword" className="cursor-pointer select-none relative bottom-[1px]">Show password</label>
-                    </div>
+                    <form >
+                        <InputField setValue={setEmail} value={email} required={true} autoFocus={true} placeholder="Email"/>
+                        <InputField setValue={setPassword} value={password} required={true} autoFocus={false} type={showPassword? "text": "password"} placeholder="Password"/>
+                        <div className="my-[2px] mb-1 flex justify-between items-center">
+                            <div>
+                                <input
+                                    id="showPassword"
+                                    type="checkbox"
+                                    className="w-4 mr-1 cursor-pointer"
+                                    onChange={(e) => setShowPassword(e.target.checked)}
+                                    checked={showPassword}
+                                    />
+                                <label htmlFor="showPassword" className="cursor-pointer select-none relative bottom-[1px]">Show password</label>
+                            </div>
+                            <div>
+                                <a href="#" className="text-sm text-blue-700 hover:underline">Forgot password?</a>
+                            </div>
+                        </div>
+                        <Button children="Submit" type="submit"/>
+                    </form>
                 </div>
             </div>
 

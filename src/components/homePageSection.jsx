@@ -10,7 +10,7 @@ export default () => {
                 <div className="ml-0 md:ml-10 text-white">
                     <h2 className="text-2xl text-center md:text-4xl font-bold underline animate-slideInRight">GET SKY BUY</h2>
                     <p className="italic text-center text-sm md:text-lg animate-slideInRight">Sell your products to a wider audience with 0 hassle.</p>
-                    <p className="italic text-center text-sm md:text-lg animate-slideInRight">Trusted by 100+ local shopkeepers.</p>
+                    <p className="italic text-center text-sm md:text-lg animate-slideInRight">Trusted by 10+ local shopkeepers.</p>
                 </div>
 
             </div>

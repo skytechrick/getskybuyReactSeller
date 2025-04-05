@@ -31,7 +31,7 @@ export default function StartSelling() {
     }, []);
 
     return (
-        <section className="w-full py-16 bg-white">
+        <section className="w-full pt-16 pb-12 bg-white">
             <h2 className="text-2xl md:text-3xl font-bold text-center text-orange-600 mb-12">
                 Start Selling in Just 4 Steps
             </h2>

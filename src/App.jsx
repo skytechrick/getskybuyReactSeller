@@ -3,9 +3,9 @@ import Header from './components/header.jsx';
 
 function App() {
     return (
-        <div className='w-screen h-screen flex flex-col'>
+        <div className='flex flex-col'>
             <Header />
-            {/* <LoginPage /> */}
+            <LoginPage />
         </div>
         
     );

@@ -5,7 +5,7 @@ import {
 
 const GoogleLoginButton = () => {
   return (
-    <div className="flex flex-col items-center gap-4 my-2">
+    <div className="z-10 flex flex-col items-center gap-4 my-2">
         <button className="gsi-material-button" onClick={loginWithGooglePopup}>
             <div className="gsi-material-button-state"></div>
             <div className="gsi-material-button-content-wrapper">

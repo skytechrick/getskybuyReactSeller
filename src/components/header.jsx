@@ -12,7 +12,7 @@ export default () => {
     };
 
     return (
-        <header style={headerStyle} className="w-full flex justify-center items-center h-14 bg-white font-sans">
+        <header style={headerStyle} className="w-full flex justify-center items-center h-14 bg-white font-sans sticky top-0 z-50">
             <div className="w-[98%] sm:w-[90%] lg:w-4/5 flex justify-between items-center">
                 <div className="flex justify-between items-center">
                     <div className="w-60 flex justify-center items-center flex-column">

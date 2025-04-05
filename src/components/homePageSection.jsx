@@ -2,7 +2,7 @@ import gsbLogo from "../images/GSB - Full-Txt.jpg";
 
 export default () => {
     return (
-        <div className="w-full h-screen flex flex-col items-center justify-center bg-gradient-to-r from-orange-400 via-orange-500 to-red-500 mb-20">
+        <section className="w-full h-screen flex flex-col items-center justify-center bg-gradient-to-r from-orange-400 via-orange-500 to-red-500 mb-20">
             <div className="flex flex-col md:flex-row items-center justify-center">
                 <div className="rounded-full bg-white w-36 md:w-64 overflow-hidden shadow-lg md:mb-0 mb-10 animate-slideInLeft">
                     <img src={gsbLogo} alt="GSB - Logo" className="w-full" />
@@ -16,6 +16,6 @@ export default () => {
             </div>
 
 
-        </div>
+        </section>
     )
 }

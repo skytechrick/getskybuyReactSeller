@@ -5,6 +5,7 @@ import HomePageSection2 from "./homePageSection2.jsx";
 import HomePageSection3 from "./homePageSection3.jsx";
 import HomePageSection4 from "./homePageSection4.jsx";
 import HomePageSection5 from "./homePageSection5.jsx";
+import HomePageSection6 from "./homePageSection6.jsx";
 
 export default () => {
     return (
@@ -16,6 +17,7 @@ export default () => {
             <HomePageSection3/>
             <HomePageSection4/>
             <HomePageSection5/>
+            <HomePageSection6/>
 
         </div>
         

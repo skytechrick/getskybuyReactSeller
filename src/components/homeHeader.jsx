@@ -17,6 +17,9 @@ export default () => {
     //     navigate("/onboarding/login");
     // };
 
+    const accessToken = localStorage.getItem("accessToken") || null;
+    const onboardAccessToken = localStorage.getItem("onboardAccessToken") || null;
+
     return (
         <header style={headerStyle} className="w-full flex justify-center items-center h-14 bg-white font-sans sticky top-0 z-50">
             <div className="w-[98%] sm:w-[90%] lg:w-4/5 flex justify-between items-center">
@@ -86,8 +89,8 @@ export default () => {
                     <div className="group w-20 mx-0 lg:mx-1 h-min relative top-0 text-center rounded-lg p-1 my-2 lg:p-2 bg-white hover:bg-orange-300 transition-all duration-200 cursor-pointer">
                         <span>Login</span>
                         <div className="w-[180px] hidden group-hover:block absolute right-0 top-10 border bg-white shadow-xl rounded-lg p-2 transition-all duration-200 ">
-                            <Link to="/auth/login" className="block p-1 active:bg-gray-300 active:underline text-sm hover:bg-gray-200 rounded-md mb-1">Seller's Login</Link>
-                            <Link to="/onboarding/login" className="block p-1 active:bg-gray-300 active:underline text-sm hover:bg-gray-200 rounded-md mb-1">Onboarder's login</Link>
+                            <Link to={accessToken ? "/dashboard" : "/auth/login"} className="block p-1 active:bg-gray-300 active:underline text-sm hover:bg-gray-200 rounded-md mb-1">{accessToken? "Go to dashboard": "Seller's Login"}</Link>
+                            <Link to={onboardAccessToken? "/onboarding" : "/onboarding/login"} className="block p-1 active:bg-gray-300 active:underline text-sm hover:bg-gray-200 rounded-md mb-1">{onboardAccessToken? "Check your status" : "Onboarder's login"}</Link>
                         </div>
                     </div>
                 </div>

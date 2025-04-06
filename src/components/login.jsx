@@ -112,7 +112,7 @@ export default function LoginPage() {
     return (
         <div className="md:w-full xl:w-4/5 mx-auto flex justify-center items-center mt-16 mb-16">
             <div className="mx-3 w-full bg-white flex justify-center items-center rounded-xl shadow-lg overflow-hidden">
-                <div className="h-[450px] w-2/5 bg-gradient-to-r from-orange-300 to-red-300 text-white flex justify-center items-center flex-col">
+                <div className="h-[450px] w-2/5 bg-gradient-to-r from-orange-400 to-red-400 text-white flex justify-center items-center flex-col">
                     <h2 className="font-bold text-2xl md:text-3xl">Welcome sellers</h2>
                     <p>Effortless selling starts here – Log in!</p>
                 </div>

@@ -67,11 +67,10 @@ export default function OnboardingVerifyOtp() {
 
 
     useEffect(() => {
-        // const otp = localStorage.getItem("onboardingOtp");
-        // if(!otp) {
-        //     alert("Please enter your mobile number to receive OTP");
-        //     navigate("/onboarding/register");
-        // }
+        const otpToken = localStorage.getItem("onboardingOtp");
+        if(!otpToken) {
+            navigate("/onboarding/register");
+        }
     }, []);
 
     return (

@@ -1,5 +1,6 @@
 import LoginPage from './components/login.jsx';
 import OnboardingLogin from './components/onboardingLogin.jsx';
+import OnboardingRegister from './components/onboardingRegister.jsx';
 import HomeHeader from './components/homeHeader.jsx';
 import HomePage from './components/homePage.jsx';
 import Onboarder from './components/onboarding.jsx';
@@ -19,6 +20,7 @@ function App() {
             <Route path="/onboarding">
 
                 <Route path="login" element={<><HomeHeader/><OnboardingLogin /> <HomePageSection7/></>} />
+                <Route path="register" element={<><HomeHeader/><OnboardingRegister /> <HomePageSection7/></>} />
 
             </Route>
 

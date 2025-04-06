@@ -1,8 +1,8 @@
 
 
-export function InputField({ id, placeholder, type = "text" , setValue, value , required = false , autoFocus = false }) {
+export function InputField({ id, placeholder, max , type = "text" , setValue, value , required = false , autoFocus = false }) {
     return (
-        <div className="relative my-[8px] w-full z-10">
+        <div className="relative my-[5px] w-full z-10">
             <input
                 id={id}
                 type={type}
@@ -25,6 +25,7 @@ export function InputField({ id, placeholder, type = "text" , setValue, value , 
                 autoCorrect="off"
                 spellCheck="false"
                 autoFocus={autoFocus}
+                maxLength={max}
             />
             <label
                 htmlFor={id}

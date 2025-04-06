@@ -50,7 +50,7 @@ export default () => {
 
                                 <li className="group w-18 mx-0 lg:mx-1 h-min relative top-0 text-center rounded-lg p-1 my-2 lg:p-2 bg-white-100 hover:bg-orange-300 transition-all duration-200 cursor-pointer">
                                     <span>Services</span>
-                                    <ul className="w-[180px] hidden group-hover:block absolute top-9 border left-0 bg-white shadow-xl rounded-lg p-2 transition-all duration-200 ">
+                                    <ul className="w-[150px] hidden group-hover:block absolute top-9 border left-0 bg-white shadow-xl rounded-lg p-2 transition-all duration-200 ">
                                         <Link to="/onboarding/register" className="block p-1 active:bg-gray-300 active:underline text-sm hover:bg-gray-200 rounded-md mb-1">Register for seller</Link>
                                         <Link to="/business-connect" className="block p-1 active:bg-gray-300 active:underline text-sm hover:bg-gray-200 rounded-md mb-1">Business connect</Link>
                                     </ul>
@@ -67,7 +67,7 @@ export default () => {
                                 </li>
                                 <li className="group w-20 mx-0 lg:mx-1 h-min relative top-0 text-center rounded-lg p-1 my-2 lg:p-2 bg-white-100 hover:bg-orange-300 transition-all duration-200 cursor-pointer">
                                     <span>Support</span>
-                                    <ul className="w-[180px] hidden group-hover:block absolute top-9 border left-0 bg-white shadow-xl rounded-lg p-2 transition-all duration-200 ">
+                                    <ul className="w-[150px] hidden group-hover:block absolute top-9 border left-0 bg-white shadow-xl rounded-lg p-2 transition-all duration-200 ">
                                         <a href="https://wa.me/9332525641" target="__blank" className="block p-1 active:bg-gray-300 active:underline text-sm hover:bg-gray-200 rounded-md mb-1">WhatsApp us</a>
                                         <li className="p-1 active:bg-gray-300 active:underline text-sm hover:bg-gray-200 rounded-md mb-1">Help center</li>
                                         <li className="p-1 active:bg-gray-300 active:underline text-sm hover:bg-gray-200 rounded-md mb-1">Mail us</li>
@@ -85,12 +85,12 @@ export default () => {
                     </div>
                 </div>
                 <div className="flex flex-row">
-                    <div className="hidden sm:block group w-24 mx-0 lg:mx-1 h-min relative top-0 text-center rounded-lg shadow-sm p-1 my-2 lg:p-2 bg-white-100 bg-orange-300 hover:bg-white hover:border hover:underline active:bg-orange-200 transition-all duration-200 cursor-pointer">
+                    <Link to="/onboarding/register" className="hidden sm:block group w-24 mx-0 lg:mx-1 h-min relative top-0 text-center rounded-lg shadow-sm p-1 my-2 lg:p-2 bg-white-100 bg-orange-300 hover:bg-white hover:border hover:underline active:bg-orange-200 transition-all duration-200 cursor-pointer">
                         <span>Register</span>    
-                    </div>
+                    </Link>
                     <div className="group w-20 mx-0 lg:mx-1 h-min relative top-0 text-center rounded-lg p-1 my-2 lg:p-2 bg-white hover:bg-orange-300 transition-all duration-200 cursor-pointer">
                         <span>Login</span>
-                        <div className="w-[180px] hidden group-hover:block absolute right-0 top-10 border bg-white shadow-xl rounded-lg p-2 transition-all duration-200 ">
+                        <div className="w-[150px] hidden group-hover:block absolute right-0 top-10 border bg-white shadow-xl rounded-lg p-2 transition-all duration-200 ">
                             <Link to={accessToken ? "/dashboard" : "/auth/login"} className="block p-1 active:bg-gray-300 active:underline text-sm hover:bg-gray-200 rounded-md mb-1">{accessToken? "Go to dashboard": "Seller's Login"}</Link>
                             <Link to={onboardAccessToken? "/onboarding" : "/onboarding/login"} className="block p-1 active:bg-gray-300 active:underline text-sm hover:bg-gray-200 rounded-md mb-1">{onboardAccessToken? "Check your status" : "Onboarder's login"}</Link>
                         </div>

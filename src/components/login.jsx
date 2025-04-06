@@ -2,7 +2,8 @@ import { InputField } from "./ui/inputField.jsx";
 import { Button } from "./ui/button.jsx";
 import OAuthBtn from "./ui/oAuthBtns.jsx";
 // import { getRedirectLoginResult } from "../firebase/auth.js";
-import { useState , useEffect } from "react";
+import { useState , useEffect, use } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
 
@@ -11,6 +12,9 @@ export default function LoginPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
+
+    const navigate = useNavigate();
+
 
     setInterval(() => {
         const data = localStorage.getItem("oAuth");
@@ -22,7 +26,7 @@ export default function LoginPage() {
     }, 1000);
 
 
-    const url = import.meta.env.VITE_CUSTOMER_URL;
+    const url = import.meta.env.VITE_SELLER_BACKEND;
 
     if(body !== null){
         const { user, idToken, provider } = body;
@@ -58,7 +62,7 @@ export default function LoginPage() {
         });
     }
 
-    const formSubmit = () => {
+    const formSubmit = (e) => {
         e.preventDefault();
         
         if(email === ""){
@@ -78,8 +82,32 @@ export default function LoginPage() {
                 email,
                 password
             })
-        })
+        }).then(async res=> {
+            if(res.ok){
+                return res.json();
+            }else{
+                const data = await res.json();
+                alert(data.message);
+            }
+        }).then(data => {
+            if(data){
+                const { token } = data;
+                localStorage.setItem("accessToken", token);
+                navigate("/dashboard");
+            }
+        }).catch(err => {
+            console.error(err);
+        });
     }
+
+    useEffect(() => {
+        
+        const data = localStorage.getItem("accessToken");
+        if(data){
+            navigate("/dashboard");
+        }
+
+    }, []);
 
     return (
         <div className="md:w-full xl:w-4/5 mx-auto flex justify-center items-center mt-16 mb-16">

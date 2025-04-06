@@ -12,6 +12,8 @@ export default () => {
         color: "var(--primaryColor)",
     };
 
+    const a = 1;
+
     // const navigate = useNavigate();
     // const handleLogin = () => {
     //     navigate("/onboarding/login");

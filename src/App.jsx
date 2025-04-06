@@ -1,4 +1,5 @@
 import LoginPage from './components/login.jsx';
+import OnboardingLogin from './components/onboardingLogin.jsx';
 import HomeHeader from './components/homeHeader.jsx';
 import HomePage from './components/homePage.jsx';
 import Onboarder from './components/onboarding.jsx';
@@ -15,11 +16,11 @@ function App() {
                 <Route path="login" element={<><HomeHeader/><LoginPage /> <HomePageSection7/></>} />
             </Route>
 
-            {/* <Route path="/onboarding"> */}
+            <Route path="/onboarding">
 
-                {/* <Route path="login" element={<><HomeHeader/><LoginPage /></>} /> */}
+                <Route path="login" element={<><HomeHeader/><OnboardingLogin /> <HomePageSection7/></>} />
 
-            {/* </Route> */}
+            </Route>
 
             <Route path="*" element={<h1 className='text-3xl'>Page not found</h1>} />
         </Routes>

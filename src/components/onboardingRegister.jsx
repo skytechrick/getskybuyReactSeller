@@ -24,11 +24,11 @@ export default function OnboardingRegister() {
                 <div className="w-3/5 p-3">
 
 
-                    <div className="w-full p-10">
+                    <div className="w-full p-16 pb-3">
                         <h1 className="font-bold text-2xl md:text-3xl">Create your account</h1>
                         <p>Fill in the details below to create your account.</p>
                     </div>
-                    <form className="w-full flex flex-col items-center justify-center px-10 pb-10" onSubmit={handleSubmit}>
+                    <form className="w-full flex flex-col items-center justify-center px-16" onSubmit={handleSubmit}>
                         <InputField id="registerName" type="text" placeholder="Name" required={true} autoFocus={true} value={name} setValue={setName} />
                         
                         <InputField id="registerPinCode" type="text" placeholder="PIN code" max={6} required={true} value={pinCode} setValue={setPinCode} />
@@ -54,8 +54,8 @@ export default function OnboardingRegister() {
 
                 
                 </div>
-                <div className="w-3/5 p-3 bg-gradient-to-r from-orange-400 to-red-400 text-white flex flex-col items-center justify-center h-[600px]">
-                    <h1 className="font-bold text-2xl md:text-3xl animate-slideInRight">Register now</h1>
+                <div className="w-3/5 p-3 bg-gradient-to-r from-orange-400 to-red-400 text-white flex flex-col items-center justify-center h-[590px]">
+                    <h1 className="font-bold text-2xl text-center md:text-3xl animate-slideInRight"><span className="text-6xl relative bottom-5">📝</span> <br />Register now</h1>
                     <p className="animate-slideInRight">Create your seller account and turn your shop into an online success story!</p>
                 </div>
             </div>

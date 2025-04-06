@@ -68,7 +68,7 @@ export default function LoginPage() {
                     <p>Complete your onboarding process and start selling!</p>
                 </div>
                 <div className="w-3/5 bg-white p-10 px-20">
-                    <h2 className="font-bold text-2xl">Login to onboarding account</h2>
+                    <h2 className="font-bold text-2xl">Login to your onboarding account</h2>
                     <p>Enter your credentials!</p>
                     <form onSubmit={formSubmit}>
                         <InputField setValue={setEmail} value={email} required={true} autoFocus={true} placeholder="Email"/>

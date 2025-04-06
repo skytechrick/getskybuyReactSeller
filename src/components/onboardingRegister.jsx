@@ -38,10 +38,10 @@ export default function OnboardingRegister() {
             alert("Password must be at least 8 characters long");
             return;
         }
-        if(!/^[a-zA-Z0-9]+$/.test(password)) {
-            alert("Password must contain at least one letter and one number");
-            return;
-        }
+        // if(!/^[a-zA-Z0-9]+$/.test(password)) {
+        //     alert("Password must contain at least one letter and one number");
+        //     return;
+        // }
 
 
         const data = {
@@ -54,7 +54,7 @@ export default function OnboardingRegister() {
 
         const url = import.meta.env.VITE_SELLER_BACKEND;
 
-        fetch(`${url}/api/register`, {
+        fetch(`${url}/api/auth/register`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

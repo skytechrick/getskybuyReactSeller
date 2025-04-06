@@ -1,7 +1,7 @@
 import { InputField } from "./ui/inputField.jsx";
 import { Button } from "./ui/button.jsx";
-import { useState , useEffect, use } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState , useEffect } from "react";
+import { useNavigate , Link } from "react-router-dom";
 
 export default function LoginPage() {
 
@@ -63,7 +63,7 @@ export default function LoginPage() {
     return (
         <div className="md:w-full xl:w-4/5 mx-auto flex justify-center items-center mt-16 mb-16">
             <div className="mx-3 w-full bg-white flex justify-center items-center rounded-xl shadow-lg overflow-hidden">
-                <div className="h-[450px] w-2/5 bg-gradient-to-r from-orange-400 to-red-400 text-white flex justify-center items-center flex-col">
+                <div className="h-[400px] w-2/5 bg-gradient-to-r from-orange-400 to-red-400 text-white flex justify-center items-center flex-col">
                     <h2 className="font-bold text-2xl md:text-3xl">Welcome new sellers</h2>
                     <p>Complete your onboarding process and start selling!</p>
                 </div>
@@ -89,6 +89,8 @@ export default function LoginPage() {
                             </div>
                         </div>
                         <Button children="Submit" type="submit"/>
+
+                        <p className="text-sm text-center mt-4">Don't have an account? <Link to="/onboarding/register" className="text-blue-500 cursor-pointer">Register</Link></p>
                     </form>
 
                 </div>

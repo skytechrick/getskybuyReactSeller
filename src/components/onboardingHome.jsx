@@ -26,7 +26,6 @@ export default function OnboardingHome() {
 
                 if (response.ok) {
                     const data = await response.json();
-                    console.log(data.data);
                     setName(data.data.personalDetails.name);
                     
                 } else {

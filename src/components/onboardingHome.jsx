@@ -55,3 +55,6 @@ export default function OnboardingHome() {
     );
 
 }
+
+
+// $ sudo airodump-ng wlp2s0mon

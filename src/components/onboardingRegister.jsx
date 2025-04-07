@@ -70,8 +70,8 @@ export default function OnboardingRegister() {
         }).then((data) => {
             if(data) {
                 localStorage.setItem("onboardingOtp", data.token);
-                alert("Account created successfully");
-                navigate("/onboarding/register/verify-top");
+                alert(data.message);
+                navigate("/onboarding/register/verify-otp");
             }
         }).catch((err) => {
             alert("Something went wrong");

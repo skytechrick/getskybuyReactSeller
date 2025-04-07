@@ -68,9 +68,9 @@ export default function OnboardingVerifyOtp() {
 
     useEffect(() => {
         const otpToken = localStorage.getItem("onboardingOtp");
-        if(!otpToken) {
-            navigate("/onboarding/register");
-        }
+        // if(!otpToken) {
+        //     navigate("/onboarding/register");
+        // }
     }, []);
 
     return (

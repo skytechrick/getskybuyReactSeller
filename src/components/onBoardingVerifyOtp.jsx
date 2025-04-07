@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 export default function OnboardingVerifyOtp() {
 
-    const [otp, setOtp] = useState(" ");
+    const [otp, setOtp] = useState("");
 
     const navigate = useNavigate();
     const closeOtp = () => {

@@ -5,6 +5,7 @@ import OnBoardingVerifyOtp from './components/onBoardingVerifyOtp.jsx';
 import HomeHeader from './components/homeHeader.jsx';
 import HomePage from './components/homePage.jsx';
 import Onboarder from './components/onboarding.jsx';
+import OnboardingHome from './components/onboardingHome.jsx';
 import HomePageSection7 from "./components/homePageSection7.jsx";
 import { Routes, Route } from "react-router-dom";
 
@@ -19,8 +20,9 @@ function App() {
             </Route>
 
                 {/* <Route path="register" element={<><HomeHeader/><OnboardingRegister /> <HomePageSection7/></>} /> */}
-            <Route path="/onboarding">
+            <Route path="/onboarding" element={<Onboarder />}>
 
+                <Route path="" element={<OnboardingHome/>} />
                 <Route path="login" element={<><HomeHeader/><OnboardingLogin /> <HomePageSection7/></>} />
                 <Route path="register" element={<><HomeHeader/><OnboardingRegister /> <HomePageSection7/></>}>
                     <Route path="verify-otp" element={<OnBoardingVerifyOtp/>} />

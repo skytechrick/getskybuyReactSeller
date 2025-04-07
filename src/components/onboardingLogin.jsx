@@ -24,7 +24,7 @@ export default function LoginPage() {
             alert("Password cannot be empty.");
         }
 
-        fetch(`${url}/api/auth/login`, {
+        fetch(`${url}/api/auth/onboarding/login`, {
             method: "POST",
             headers: {
                 "Content-Type":"application/json",
@@ -38,7 +38,7 @@ export default function LoginPage() {
                 return res.json();
             }else{
                 const data = await res.json();
-                alert(data.message);
+                throw new Error(data.message);
             }
         }).then(data => {
             if(data){
@@ -47,7 +47,8 @@ export default function LoginPage() {
                 navigate("/onboarding");
             }
         }).catch(err => {
-            console.error(err);
+            console.warn(err.message);
+            alert(err.message);
         });
     }
 

@@ -119,6 +119,19 @@ export default function OnboardingProfile() {
 
 
                 </div>
+
+                <div className='bg-white p-10 m-2 rounded-lg shadow-md hover:scale-105 transition-all duration-200'>
+                    
+                    <h1 className='font-bold text-xl'>Current Status</h1>
+                    <p><strong>Status:</strong> <span className='italic text-green-600'>{profileData.status}</span></p>
+                    <p><strong>Remark:</strong> <span className='italic text-gray-400'>{profileData.remark?profileData.remark:"No Remark"}</span></p>
+                    <p><strong>Onboarding completed:</strong> <span className='italic text-gray-400'>{profileData.isCompletedOnboarding? (<div><span>Completed</span><FaCheck className='pl-1 relative bottom-[2px] text-xl inline-block'/></div>): <span className='font-bold italic text-red-400'>"Not completed<FaTimes className='pl-1 relative bottom-[2px] text-xl inline-block'/>"</span>}</span></p>
+                    <p><strong>Onboarding completed By:</strong> <span className='italic text-gray-400'>{profileData.onboardingCompletedBy? (<div><span>{profileData.onboardingCompletedBy.personalDetails.name}</span><FaCheck className='pl-1 relative bottom-[2px] text-xl inline-block'/></div>): <span className='font-bold italic text-red-400'>"Not completed<FaTimes className='pl-1 relative bottom-[2px] text-xl inline-block'/>"</span>}</span></p>
+                    <p><strong>Onboarding completed At:</strong> <span className='italic text-gray-400'>{profileData.onboardingCompletedBy? (<div><span>{profileData.onboardingCompletedAt.toISOString()}</span><FaCheck className='pl-1 relative bottom-[2px] text-xl inline-block'/></div>): <span className='font-bold italic text-red-400'>"Not completed<FaTimes className='pl-1 relative bottom-[2px] text-xl inline-block'/>"</span>}</span></p>
+                    <p><strong>Categories:</strong> <span className='italic text-gray-400'>{profileData.onboardingCompletedBy? (<div><span>{profileData.categories.toString()}</span><FaCheck className='pl-1 relative bottom-[2px] text-xl inline-block'/></div>): <span className='font-bold italic text-red-400'>"Not completed<FaTimes className='pl-1 relative bottom-[2px] text-xl inline-block'/>"</span>}</span></p>
+                    <p><strong>Selected Categories:</strong> <span className='italic text-gray-400'>{profileData.onboardingCompletedBy? (<div><span>{JSON.stringify(profileData.selectedCategories)}</span><FaCheck className='pl-1 relative bottom-[2px] text-xl inline-block'/></div>): <span className='font-bold italic text-red-400'>"Not completed<FaTimes className='pl-1 relative bottom-[2px] text-xl inline-block'/>"</span>}</span></p>
+                    
+                </div>
                       
             </div>
         )

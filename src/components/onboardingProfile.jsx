@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaCheck , FaEdit , FaPen , FaTimes } from 'react-icons/fa';
 
-
 export default function OnboardingProfile() {
 
     const [profileData , setProfileData] = useState(undefined);
+    const [pickup, setPickup] = useState(false);
     const navigate = useNavigate();
     
     const url = import.meta.env.VITE_SELLER_BACKEND;
@@ -37,15 +37,11 @@ export default function OnboardingProfile() {
         };
 
         fetchData();
+        if (profileData?.pickupAddress) {
+            setPickup(true);
+        }
+
     }, []);
-
-
-    let pickup = false;
-    if(profileData){
-
-        pickup = profileData.pickupAddress || false;
-    }
-
 
     return (
         profileData && (            
@@ -95,22 +91,31 @@ export default function OnboardingProfile() {
                         </div>
                     </div>
 
-                    {/* <div className='w-96 bg-white p-10 m-2 rounded-lg shadow-md hover:scale-105 transition-all duration-200'>
+                    <div className='w-96 bg-white p-10 m-2 rounded-lg shadow-md hover:scale-105 transition-all duration-200'>
                         <h2 className='text-2xl font-bold'>Pickup address</h2>
-                        <div className='flex flex-col mt-2'>
-                            <p className='text-md'><strong>Contact person name: </strong>{profileData.pickupAddress.contactPerson.name? profileData.pickupAddress.accountHolderName : <span className='font-bold italic text-gray-500'>"Not added"</span>}</p>
-                            <p className='text-md'><strong>Contact person no: </strong>{profileData.pickupAddress.contactPerson.mobileNumber? profileData.pickupAddress.accountHolderName.mobileNumber : <span className='font-bold italic text-gray-500'>"Not added"</span>}</p>
-                            <p className='text-md'><strong>Address line: </strong>{profileData.pickupAddress.address_line? profileData.pickupAddress.address_line : <span className='font-bold italic text-gray-500'>"Not added"</span>}</p>
-                            <p className='text-md'><strong>PIN code: </strong>{profileData.pickupAddress.address_line? profileData.pickupAddress.pinCode : <span className='font-bold italic text-gray-500'>"Not added"</span>}</p>
-                            <p className='text-md'><strong>District: </strong>{profileData.pickupAddress.district? profileData.pickupAddress.district : <span className='font-bold italic text-gray-500'>"Not added"</span>}</p>
-                            <p className='text-md'><strong>City: </strong>{profileData.pickupAddress.city? profileData.pickupAddress.city : <span className='font-bold italic text-gray-500'>"Not added"</span>}</p>
-                            <p className='text-md'><strong>State: </strong>{profileData.pickupAddress.state? profileData.pickupAddress.state : <span className='font-bold italic text-gray-500'>"Not added"</span>}</p>
-                            <p className='text-md'><strong>Country: </strong>{profileData.pickupAddress.country? profileData.pickupAddress.country : <span className='font-bold italic text-gray-500'>"Not added"</span>}</p>
-                            
-                            <p className='text-center font-bold mt-3 text-green-600'>{profileData.process.bankDetailsUploaded? (<div><span>Completed</span><FaCheck className='pl-1 relative bottom-[2px] text-xl inline-block'/></div>): <span className='font-bold italic text-red-400'>"Not completed<FaTimes className='pl-1 relative bottom-[2px] text-xl inline-block'/>"</span>}</p>
 
-                        </div>
-                    </div> */}
+                        {
+                            pickup? (
+                                
+                                <div className='flex flex-col mt-2'>
+                                    <p className='text-md'><strong>Contact person name: </strong>{profileData.pickupAddress.contactPerson.name? profileData.pickupAddress.accountHolderName : <span className='font-bold italic text-gray-500'>"Not added"</span>}</p>
+                                    <p className='text-md'><strong>Contact person no: </strong>{profileData.pickupAddress.contactPerson.mobileNumber? profileData.pickupAddress.accountHolderName.mobileNumber : <span className='font-bold italic text-gray-500'>"Not added"</span>}</p>
+                                    <p className='text-md'><strong>Address line: </strong>{profileData.pickupAddress.address_line? profileData.pickupAddress.address_line : <span className='font-bold italic text-gray-500'>"Not added"</span>}</p>
+                                    <p className='text-md'><strong>PIN code: </strong>{profileData.pickupAddress.address_line? profileData.pickupAddress.pinCode : <span className='font-bold italic text-gray-500'>"Not added"</span>}</p>
+                                    <p className='text-md'><strong>District: </strong>{profileData.pickupAddress.district? profileData.pickupAddress.district : <span className='font-bold italic text-gray-500'>"Not added"</span>}</p>
+                                    <p className='text-md'><strong>City: </strong>{profileData.pickupAddress.city? profileData.pickupAddress.city : <span className='font-bold italic text-gray-500'>"Not added"</span>}</p>
+                                    <p className='text-md'><strong>State: </strong>{profileData.pickupAddress.state? profileData.pickupAddress.state : <span className='font-bold italic text-gray-500'>"Not added"</span>}</p>
+                                    <p className='text-md'><strong>Country: </strong>{profileData.pickupAddress.country? profileData.pickupAddress.country : <span className='font-bold italic text-gray-500'>"Not added"</span>}</p>
+                                    
+                                    <p className='text-center font-bold mt-3 text-green-600'>{profileData.process.bankDetailsUploaded? (<div><span>Completed</span><FaCheck className='pl-1 relative bottom-[2px] text-xl inline-block'/></div>): <span className='font-bold italic text-red-400'>"Not completed<FaTimes className='pl-1 relative bottom-[2px] text-xl inline-block'/>"</span>}</p>
+
+                                </div>
+                            ): (
+                                <div className='font-bold italic text-center text-red-400'>"Not completed<FaTimes className='pl-1 relative bottom-[2px] text-xl inline-block'/>"</div>
+                            )
+                        }
+                        
+                    </div>
 
 
                 </div>

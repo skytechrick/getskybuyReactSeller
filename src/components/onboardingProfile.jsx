@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaCheck , FaEdit , FaPen , FaTimes } from 'react-icons/fa';
+import { Button } from './ui/button.jsx';
 
 export default function OnboardingProfile() {
 
@@ -9,6 +10,10 @@ export default function OnboardingProfile() {
     const navigate = useNavigate();
     
     const url = import.meta.env.VITE_SELLER_BACKEND;
+
+    const goToOnboarding = () => {
+        navigate("/onboarding/process/profile");
+    }
     
     useEffect(() => {
         const fetchData = async () => {
@@ -133,6 +138,13 @@ export default function OnboardingProfile() {
                     
                 </div>
                       
+                <div className='flex flex-row justify-center items-center my-5 w-full'>
+                    <div className='w-64'>
+                        <Button type="button" onClick={goToOnboarding} children={"Go to onboarding"}/>
+                    </div>
+                        
+
+                </div>
             </div>
         )
     );

@@ -6,6 +6,7 @@ import HomeHeader from './components/homeHeader.jsx';
 import HomePage from './components/homePage.jsx';
 import Onboarder from './components/onboarding.jsx';
 import OnboardingProfile from './components/onboardingProfile.jsx';
+import OnboardingProcessProfile from "./components/onboardingProcessProfile.jsx";
 import OnboardingHome from './components/onboardingHome.jsx';
 import HomePageSection7 from "./components/homePageSection7.jsx";
 import { Routes, Route } from "react-router-dom";
@@ -22,6 +23,10 @@ function App() {
 
                 {/* <Route path="register" element={<><HomeHeader/><OnboardingRegister /> <HomePageSection7/></>} /> */}
             <Route path="/onboarding" element={<Onboarder />}>
+
+                <Route path="process">
+                    <Route path="profile" element={<><HomeHeader/> <OnboardingProcessProfile/> <HomePageSection7 /></>} />
+                </Route>
 
                 <Route path="" element={<OnboardingHome/>} />
                 <Route path="login" element={<><HomeHeader/><OnboardingLogin /> <HomePageSection7/></>} />

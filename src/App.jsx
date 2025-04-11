@@ -10,6 +10,7 @@ import OnboardingProcess from "./components/onboardingProcess.jsx";
 import OnboardingHome from './components/onboardingHome.jsx';
 import HomePageSection7 from "./components/homePageSection7.jsx";
 import OnboardingProcessProfile from "./components/onboardingProcessProfile.jsx";
+import OnboardingProcessBusiness from "./components/onboardingProcessBusiness.jsx";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -31,7 +32,7 @@ function App() {
 
                 <Route path="process" element={<><HomeHeader/> <OnboardingProcess /> <HomePageSection7 /></>} >
                     <Route path="profile" element={<OnboardingProcessProfile />} />
-                    {/* <Route path="business" element={<><HomeHeader/> <OnboardingProcess/> <HomePageSection7 /></>} /> */}
+                    <Route path="business" element={<OnboardingProcessBusiness/>} />
                     {/* <Route path="bank-details" element={<><HomeHeader/> <OnboardingProcess/> <HomePageSection7 /></>} /> */}
                     {/* <Route path="pickup-address" element={<><HomeHeader/> <OnboardingProcess/> <HomePageSection7 /></>} /> */}
                 </Route>

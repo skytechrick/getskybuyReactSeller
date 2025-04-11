@@ -49,12 +49,12 @@ export default function OnboardingProcess() {
                     }
                 });
 
+                const data = await response.json();
                 if (response.ok) {
-                    const data = await response.json();
                     setProfileData(data.data);
                     setProcess(true);
                     if (data.data.process.profileCompletion) {
-                        setWidthCompletion("w-1/2");
+                        setWidthCompletion("w-1/3");
                     }
                     if (data.data.process.businessInformation) {
                         setWidthCompletion("w-2/3");
@@ -66,7 +66,7 @@ export default function OnboardingProcess() {
                         setWidthCompletion("w-full");
                     }
                 } else {
-                    alert("Session expired, please login again");
+                    alert(data.message);
                     localStorage.removeItem("onboardAccessToken");
                     navigate("/onboarding/login");
                 }

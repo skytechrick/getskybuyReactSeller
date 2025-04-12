@@ -257,7 +257,7 @@ export default function OnboardingProcessProfile() {
 
                                 </fieldset>
 
-                                <fieldset className="border-2 border-gray-300 p-4 rounded-md mt-4">
+                                <fieldset className="border-2 border-gray-300 p-4 rounded-md mt-4 mb-3">
                                     <legend>Address</legend>
                                     
 
@@ -331,6 +331,19 @@ export default function OnboardingProcessProfile() {
                             </form>
                         )
                     }
+                    <div>
+                        <div className="flex flex-row justify-end gap-4 my-4">
+                            <div className="w-24">
+                                <Button onClick={()=>{navigate("/onboarding/process/business")}} type="button" children={"Next"} disabled={onboarder?.process.profileCompletion?false:true}/>
+                            </div>
+                            
+                        </div>
+
+                        <hr />
+                        <p className="text-sm text-gray-500 mt-4">Note: Please make sure to fill all the required fields before submitting.</p>
+                        <p className="text-sm text-gray-500">You can update your profile later as well.</p>
+                        <p className="text-sm text-gray-500">If you have any questions, please contact us.</p>
+                    </div>
                 </div>
                 
             </div>

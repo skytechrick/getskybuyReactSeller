@@ -484,7 +484,7 @@ export default function OnboardingProcessBusiness(){
                                 <Button onClick={()=>{navigate("/onboarding/process/profile")}} type="button" children={"Back"} disabled={false}/>
                             </div>
                             <div className="w-24">
-                                <Button onClick={()=>{navigate("/onboarding/process/business")}} type="button" children={"Next"} disabled={onboarder?.process.businessInformation?false:true}/>
+                                <Button onClick={()=>{navigate("/onboarding/process/bank")}} type="button" children={"Next"} disabled={onboarder?.process.businessInformation?false:true}/>
                             </div>
                             
                         </div>

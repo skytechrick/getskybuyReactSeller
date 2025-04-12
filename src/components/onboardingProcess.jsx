@@ -101,8 +101,8 @@ export default function OnboardingProcess() {
                                     <>
                                         <OnboardingCircle to={"/onboarding/process/profile"} postition="left-0" active={profileData.process.profileCompletion} no={1}/>
                                         <OnboardingCircle to={"/onboarding/process/business"} postition="left-1/3" active={profileData.process.businessInformation} no={2}/>
-                                        <OnboardingCircle to={"/onboarding/process/bank-details"} postition="left-2/3" active={profileData.process.bankDetailsUploaded} no={3}/>
-                                        <OnboardingCircle to={"/onboarding/process/pickup-address"} postition="-right-5" active={profileData.process.pickupAddressAdded} no={4}/>
+                                        <OnboardingCircle to={"/onboarding/process/bank"} postition="left-2/3" active={profileData.process.bankDetailsUploaded} no={3}/>
+                                        <OnboardingCircle to={"/onboarding/process/pickup"} postition="-right-5" active={profileData.process.pickupAddressAdded} no={4}/>
                                     </>
                                 )
                             }

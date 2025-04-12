@@ -8,3 +8,13 @@ export const sellerBackendImage = (image) => {
     return null;
 
 }
+export const sellerBusinessBackendImage = (image) => {
+    const domian = import.meta.env.VITE_SELLER_BACKEND;
+
+    if (image) {
+        return `${domian}/business-images/${image}`;
+    
+    }
+    return null;
+
+}

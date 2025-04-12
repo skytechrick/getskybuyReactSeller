@@ -100,13 +100,13 @@ export default function OnboardingProcessProfile() {
                         altMobileNumber: data.data.personalDetails.altMobileNumber || "",
                         dob: data.data.personalDetails.dob? formateDateToInputDate(new Date(data.data.personalDetails.dob)) : "1947-08-15",
                         gender: data.data.personalDetails.gender || "---- Select gender ----",
-                        address: data.data.address && {
-                            address_line: data.data.address.address_line || "",
-                            pinCode: data.data.address.pinCode.toString() || "",
-                            district: data.data.address.district || "",
-                            state: data.data.address.state || "",
-                            city: data.data.address.city || "",
-                            country: data.data.address.country || "",
+                        address: {
+                            address_line: data.data.address?.address_line || "",
+                            pinCode: data.data.address?.pinCode.toString() || "",
+                            district: data.data.address?.district || "",
+                            state: data.data.address?.state || "",
+                            city: data.data.address?.city || "",
+                            country: data.data.address?.country || "",
                         }
                     })
                     
